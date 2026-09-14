@@ -1,0 +1,9 @@
+ESPECIES UTILIZADAS
+Pothos — Epipremnum aureum
+Lengua de suegra — Dracaena trifasciata
+Espatifilo — Spathiphyllum
+Lavanda — Lavandula angustifolia
+Romero — Salvia rosmarinus
+Geranio de jardín — Pelargonium × hortorum
+
+Las imágenes de este paquete son ilustraciones SVG locales para que el proyecto sea completamente autónomo y no dependa de servidores externos.

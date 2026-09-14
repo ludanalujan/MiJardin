@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Catálogo estático de plantas de jardín, con categorías interior y exterior.">
+  <title>Mi jardín | Plantas</title>
+  <link rel="stylesheet" href="estilosIA.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="contenedor header-inner">
+      <a class="marca" href="#inicio">Mi jardín</a>
+      <nav aria-label="Navegación principal">
+        <ul class="nav-list">
+          <li><a href="#plantas">Plantas</a></li>
+          <li><a href="#mantenimiento">Quién mantiene el sitio</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <section class="hero" aria-labelledby="titulo-principal">
+      <div class="contenedor hero-inner">
+        <p class="eyebrow">Catálogo personal</p>
+        <h1 id="titulo-principal">Las plantas de mi jardín</h1>
+        <p>Una colección de especies de interior y exterior, con una ficha descargable para cada planta.</p>
+      </div>
+    </section>
+
+    <section id="plantas" class="seccion catalogo" aria-labelledby="titulo-plantas">
+      <div class="contenedor">
+        <h2 id="titulo-plantas">Elegí una categoría</h2>
+
+        <div class="filtro">
+          <input type="radio" name="categoria" id="cat-interior" checked>
+          <input type="radio" name="categoria" id="cat-exterior">
+
+          <div class="selector-categorias">
+            <div class="selector-actual" aria-hidden="true">
+              <span>Filtrar por categoría</span>
+              <span class="flecha">⌄</span>
+            </div>
+            <div class="opciones">
+              <label for="cat-interior">Interior</label>
+              <label for="cat-exterior">Exterior</label>
+            </div>
+          </div>
+
+          <p class="ayuda-filtro">Seleccioná una opción. El listado se actualiza sólo con HTML y CSS.</p>
+
+          <div class="plantas-grid">
+            <article class="tarjeta-planta planta-interior">
+              <img src="imagenes/pothos.svg" alt="Ilustración de hojas verdes de pothos, Epipremnum aureum">
+              <div class="tarjeta-contenido">
+                <p class="categoria">Interior</p>
+                <h3>Pothos</h3>
+                <p class="nombre-cientifico"><em>Epipremnum aureum</em></p>
+                <a class="boton" href="info/pothos.pdf" download>Descargar PDF</a>
+              </div>
+            </article>
+
+            <article class="tarjeta-planta planta-interior">
+              <img src="imagenes/sansevieria.svg" alt="Ilustración de hojas verticales de lengua de suegra, Dracaena trifasciata">
+              <div class="tarjeta-contenido">
+                <p class="categoria">Interior</p>
+                <h3>Lengua de suegra</h3>
+                <p class="nombre-cientifico"><em>Dracaena trifasciata</em></p>
+                <a class="boton" href="info/sansevieria.pdf" download>Descargar PDF</a>
+              </div>
+            </article>
+
+            <article class="tarjeta-planta planta-interior">
+              <img src="imagenes/spathiphyllum.svg" alt="Ilustración de espatifilo con hojas verdes y una flor blanca">
+              <div class="tarjeta-contenido">
+                <p class="categoria">Interior</p>
+                <h3>Espatifilo</h3>
+                <p class="nombre-cientifico"><em>Spathiphyllum</em></p>
+                <a class="boton" href="info/spathiphyllum.pdf" download>Descargar PDF</a>
+              </div>
+            </article>
+
+            <article class="tarjeta-planta planta-exterior">
+              <img src="imagenes/lavanda.svg" alt="Ilustración de flores violetas de lavanda, Lavandula angustifolia">
+              <div class="tarjeta-contenido">
+                <p class="categoria">Exterior</p>
+                <h3>Lavanda</h3>
+                <p class="nombre-cientifico"><em>Lavandula angustifolia</em></p>
+                <a class="boton" href="info/lavanda.pdf" download>Descargar PDF</a>
+              </div>
+            </article>
+
+            <article class="tarjeta-planta planta-exterior">
+              <img src="imagenes/romero.svg" alt="Ilustración de ramas de romero con hojas estrechas y flores pequeñas">
+              <div class="tarjeta-contenido">
+                <p class="categoria">Exterior</p>
+                <h3>Romero</h3>
+                <p class="nombre-cientifico"><em>Salvia rosmarinus</em></p>
+                <a class="boton" href="info/romero.pdf" download>Descargar PDF</a>
+              </div>
+            </article>
+
+            <article class="tarjeta-planta planta-exterior">
+              <img src="imagenes/geranio.svg" alt="Ilustración de geranio de jardín con hojas verdes y flores rojas">
+              <div class="tarjeta-contenido">
+                <p class="categoria">Exterior</p>
+                <h3>Geranio de jardín</h3>
+                <p class="nombre-cientifico"><em>Pelargonium × hortorum</em></p>
+                <a class="boton" href="info/geranio.pdf" download>Descargar PDF</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="mantenimiento" class="seccion seccion-alternativa" aria-labelledby="titulo-mantenimiento">
+      <div class="contenedor">
+        <h2 id="titulo-mantenimiento">Quién mantiene el sitio</h2>
+        <p>Este sitio es mantenido por la persona responsable del jardín. El objetivo es registrar las plantas cultivadas y reunir información básica de cuidado en fichas fáciles de consultar.</p>
+      </div>
+    </section>
+
+    <section id="contacto" class="seccion" aria-labelledby="titulo-contacto">
+      <div class="contenedor">
+        <h2 id="titulo-contacto">Contacto</h2>
+        <p>Este formulario es sólo visual: no realiza ningún envío porque el sitio no tiene backend.</p>
+        <form class="formulario" action="#" method="post">
+          <div class="campo">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" autocomplete="name" required>
+          </div>
+          <div class="campo">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" autocomplete="email" required>
+          </div>
+          <div class="campo">
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="6" required></textarea>
+          </div>
+          <button class="boton boton-enviar" type="submit">Enviar mensaje</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="contenedor">
+      <p>Mi jardín · Sitio estático realizado sólo con HTML y CSS.</p>
+    </div>
+  </footer>
+</body>
+</html>
