@@ -1,0 +1,433 @@
+/* =========================================================
+   Sitio "Mi Jardin" - estilosIA.css
+   Paleta de colores utilizada en todo el sitio:
+   #705e9f + blanco
+   #845890 + blanco
+   #98607a + blanco
+   #a76b69 + negro
+   #a7773f + negro
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Verdana, Arial, sans-serif;
+  background-color: #f6f4fa;
+  color: #2b2530;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+  font-family: Georgia, "Times New Roman", serif;
+  margin-top: 0;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+}
+
+/* =========================
+   Header y navegacion
+   ========================= */
+
+.cabecera {
+  background: #705e9f;
+  color: #ffffff;
+  padding: 1rem 1.5rem;
+}
+
+.cabecera-contenido {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.cabecera h1 {
+  margin: 0;
+  font-size: 1.7rem;
+  color: #ffffff;
+}
+
+.nav-principal ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-principal a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.3rem 0.2rem;
+  border-bottom: 2px solid transparent;
+}
+
+.nav-principal a:hover,
+.nav-principal a:focus {
+  border-bottom-color: #ffffff;
+}
+
+/* =========================
+   Contenido general
+   ========================= */
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+section {
+  margin-bottom: 3rem;
+}
+
+.seccion-intro p {
+  max-width: 65ch;
+}
+
+/* =========================
+   Selector de categoria
+   (radio buttons con apariencia de lista desplegable)
+   ========================= */
+
+.cat-radio {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.categoria-selector {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  background: #ffffff;
+  border: 1px solid #845890;
+  border-radius: 8px;
+  padding: 0.5rem;
+  max-width: 480px;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 6px rgba(112, 94, 159, 0.2);
+  position: relative;
+}
+
+.categoria-selector::after {
+  content: "\25BE";
+  position: absolute;
+  right: 0.9rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #705e9f;
+  pointer-events: none;
+}
+
+.categoria-etiqueta {
+  font-weight: bold;
+  color: #4a3d6b;
+  padding-left: 0.3rem;
+}
+
+.categoria-selector .opcion {
+  cursor: pointer;
+  padding: 0.5rem 1.6rem 0.5rem 0.9rem;
+  border-radius: 6px;
+  background: #f1eef8;
+  color: #4a3d6b;
+  border: 1px solid transparent;
+}
+
+.categoria-selector .opcion:hover {
+  background: #e4ddf3;
+}
+
+/* Resalta la opcion seleccionada, como en una lista desplegable real */
+#cat-todas:checked ~ .categoria-selector .opcion-todas,
+#cat-interior:checked ~ .categoria-selector .opcion-interior,
+#cat-exterior:checked ~ .categoria-selector .opcion-exterior {
+  background: #705e9f;
+  color: #ffffff;
+  border-color: #705e9f;
+}
+
+/* Indicador de foco visible para accesibilidad de teclado */
+#cat-todas:focus ~ .categoria-selector .opcion-todas,
+#cat-interior:focus ~ .categoria-selector .opcion-interior,
+#cat-exterior:focus ~ .categoria-selector .opcion-exterior {
+  outline: 3px solid #a7773f;
+  outline-offset: 2px;
+}
+
+/* Filtro real de plantas segun la categoria elegida */
+.grupo-plantas {
+  display: none;
+}
+
+#cat-todas:checked ~ .plantas-interior,
+#cat-todas:checked ~ .plantas-exterior,
+#cat-interior:checked ~ .plantas-interior,
+#cat-exterior:checked ~ .plantas-exterior {
+  display: block;
+}
+
+/* =========================
+   Tarjetas de plantas
+   ========================= */
+
+.grilla-plantas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.tarjeta-planta {
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.tarjeta-planta img {
+  border-radius: 8px;
+  margin-bottom: 0.3rem;
+}
+
+.tarjeta-planta h4 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.tarjeta-planta .nombre-cientifico {
+  font-style: italic;
+  margin: 0 0 0.5rem 0;
+  font-size: 0.95rem;
+}
+
+/* Colores de tarjeta segun la paleta indicada, usando border y background */
+.color-1 {
+  background: #705e9f;
+  border: 3px solid #4a3d6b;
+  color: #ffffff;
+}
+
+.color-2 {
+  background: #845890;
+  border: 3px solid #5c3c64;
+  color: #ffffff;
+}
+
+.color-3 {
+  background: #98607a;
+  border: 3px solid #6c4356;
+  color: #ffffff;
+}
+
+.color-4 {
+  background: #a76b69;
+  border: 3px solid #7a4c4a;
+  color: #000000;
+}
+
+.color-5 {
+  background: #a7773f;
+  border: 3px solid #7a582d;
+  color: #000000;
+}
+
+.boton-descarga {
+  display: inline-block;
+  margin-top: auto;
+  padding: 0.55rem 1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  background: #ffffff;
+  color: #4a3d6b;
+  border: 2px solid #ffffff;
+}
+
+.color-4 .boton-descarga,
+.color-5 .boton-descarga {
+  color: #000000;
+}
+
+.boton-descarga:hover,
+.boton-descarga:focus {
+  background: transparent;
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+.color-4 .boton-descarga:hover,
+.color-4 .boton-descarga:focus,
+.color-5 .boton-descarga:hover,
+.color-5 .boton-descarga:focus {
+  color: #000000;
+  border-color: #000000;
+}
+
+/* =========================
+   Seccion "quien mantiene el sitio"
+   ========================= */
+
+.seccion-nosotros {
+  background: #98607a;
+  color: #ffffff;
+  padding: 1.8rem;
+  border-radius: 10px;
+}
+
+.seccion-nosotros h2 {
+  color: #ffffff;
+}
+
+/* =========================
+   Formulario de contacto
+   ========================= */
+
+.seccion-contacto {
+  background: #ffffff;
+  border: 1px solid #a76b69;
+  border-radius: 10px;
+  padding: 1.8rem;
+}
+
+.formulario-contacto {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  max-width: 500px;
+  margin-top: 1rem;
+}
+
+.campo-formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.campo-formulario label {
+  font-weight: bold;
+  color: #4a3d6b;
+}
+
+.campo-formulario input,
+.campo-formulario textarea {
+  padding: 0.6rem;
+  border: 1px solid #845890;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.campo-formulario input:focus,
+.campo-formulario textarea:focus {
+  outline: 3px solid #a7773f;
+  outline-offset: 1px;
+}
+
+.boton-enviar {
+  align-self: flex-start;
+  background: #a76b69;
+  color: #000000;
+  border: 2px solid #7a4c4a;
+  padding: 0.7rem 1.6rem;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.boton-enviar:hover,
+.boton-enviar:focus {
+  background: #7a4c4a;
+  color: #ffffff;
+}
+
+/* =========================
+   Footer
+   ========================= */
+
+.pie-pagina {
+  background: #a7773f;
+  color: #000000;
+  text-align: center;
+  padding: 1.2rem;
+}
+
+.pie-pagina p {
+  margin: 0;
+}
+
+/* =========================
+   Responsive: pantallas medianas
+   ========================= */
+
+@media (max-width: 768px) {
+  .cabecera-contenido {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-principal ul {
+    gap: 0.9rem;
+  }
+
+  .grilla-plantas {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+/* =========================
+   Responsive: celulares
+   ========================= */
+
+@media (max-width: 480px) {
+  .cabecera h1 {
+    font-size: 1.4rem;
+  }
+
+  .nav-principal ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .grilla-plantas {
+    grid-template-columns: 1fr;
+  }
+
+  .categoria-selector {
+    max-width: 100%;
+  }
+
+  .formulario-contacto {
+    max-width: 100%;
+  }
+}

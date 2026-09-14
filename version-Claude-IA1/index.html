@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mi Jardin - Plantas de interior y exterior</title>
+<meta name="description" content="Sitio personal con las plantas de interior y exterior que cultivo en mi jardin, con fichas descargables de cada una.">
+<link rel="stylesheet" href="estilosIA.css">
+</head>
+<body>
+
+<header class="cabecera">
+  <div class="cabecera-contenido">
+    <h1>Mi Jardin</h1>
+    <nav class="nav-principal" aria-label="Navegacion principal">
+      <ul>
+        <li><a href="#plantas">Plantas</a></li>
+        <li><a href="#nosotros">Quien mantiene el sitio</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section id="inicio" class="seccion-intro" aria-labelledby="inicio-titulo">
+    <h2 id="inicio-titulo">Bienvenido</h2>
+    <p>
+      Este es un pequeno registro de las plantas que cultivo en casa, tanto las que
+      viven adentro como las que estan en el patio. Elegi una categoria en el listado
+      para ver solo esas plantas, y descarga la ficha en PDF de cada una si queres
+      mas informacion sobre sus cuidados.
+    </p>
+  </section>
+
+  <section id="plantas" class="seccion-plantas" aria-labelledby="plantas-titulo">
+    <h2 id="plantas-titulo">Listado de plantas</h2>
+
+    <input type="radio" id="cat-todas" name="categoria" class="cat-radio" checked>
+    <input type="radio" id="cat-interior" name="categoria" class="cat-radio">
+    <input type="radio" id="cat-exterior" name="categoria" class="cat-radio">
+
+    <div class="categoria-selector" role="radiogroup" aria-label="Filtrar plantas por categoria">
+      <span class="categoria-etiqueta" aria-hidden="true">Categoria:</span>
+      <label for="cat-todas" class="opcion opcion-todas">Todas</label>
+      <label for="cat-interior" class="opcion opcion-interior">Interior</label>
+      <label for="cat-exterior" class="opcion opcion-exterior">Exterior</label>
+    </div>
+
+    <div class="grupo-plantas plantas-interior">
+      <h3>Plantas de interior</h3>
+      <div class="grilla-plantas">
+
+        <article class="tarjeta-planta color-1">
+          <img src="imagenes/potus.jpg" alt="Potus en maceta, planta colgante de hojas verdes en forma de corazon">
+          <h4>Potus</h4>
+          <p class="nombre-cientifico">Epipremnum aureum</p>
+          <a class="boton-descarga" href="info/potus.pdf" download>Descargar ficha (PDF)</a>
+        </article>
+
+        <article class="tarjeta-planta color-2">
+          <img src="imagenes/sansevieria.jpg" alt="Sansevieria en maceta, hojas rigidas y erguidas de color verde">
+          <h4>Sansevieria</h4>
+          <p class="nombre-cientifico">Dracaena trifasciata</p>
+          <a class="boton-descarga" href="info/sansevieria.pdf" download>Descargar ficha (PDF)</a>
+        </article>
+
+        <article class="tarjeta-planta color-3">
+          <img src="imagenes/helecho-boston.jpg" alt="Helecho de Boston en maceta, frondas verdes arqueadas y frondosas">
+          <h4>Helecho de Boston</h4>
+          <p class="nombre-cientifico">Nephrolepis exaltata</p>
+          <a class="boton-descarga" href="info/helecho-boston.pdf" download>Descargar ficha (PDF)</a>
+        </article>
+
+      </div>
+    </div>
+
+    <div class="grupo-plantas plantas-exterior">
+      <h3>Plantas de exterior</h3>
+      <div class="grilla-plantas">
+
+        <article class="tarjeta-planta color-4">
+          <img src="imagenes/lavanda.jpg" alt="Lavanda en maceta, planta con espigas de flores moradas">
+          <h4>Lavanda</h4>
+          <p class="nombre-cientifico">Lavandula angustifolia</p>
+          <a class="boton-descarga" href="info/lavanda.pdf" download>Descargar ficha (PDF)</a>
+        </article>
+
+        <article class="tarjeta-planta color-5">
+          <img src="imagenes/rosal.jpg" alt="Rosal en maceta, arbusto con flores redondeadas">
+          <h4>Rosal</h4>
+          <p class="nombre-cientifico">Rosa spp.</p>
+          <a class="boton-descarga" href="info/rosal.pdf" download>Descargar ficha (PDF)</a>
+        </article>
+
+        <article class="tarjeta-planta color-1">
+          <img src="imagenes/geranio.jpg" alt="Geranio en maceta, planta con flores agrupadas de colores vivos">
+          <h4>Geranio</h4>
+          <p class="nombre-cientifico">Pelargonium x hortorum</p>
+          <a class="boton-descarga" href="info/geranio.pdf" download>Descargar ficha (PDF)</a>
+        </article>
+
+      </div>
+    </div>
+
+  </section>
+
+  <section id="nosotros" class="seccion-nosotros" aria-labelledby="nosotros-titulo">
+    <h2 id="nosotros-titulo">Quien mantiene este sitio</h2>
+    <p>
+      Este sitio es mantenido de forma personal por alguien a quien le gusta la
+      jardineria como pasatiempo. Las fichas de cada planta se basan en informacion
+      general de cuidado y en la experiencia propia cultivandolas en casa. Si
+      encontras algun dato que se pueda mejorar, podes escribir usando el
+      formulario de contacto.
+    </p>
+  </section>
+
+  <section id="contacto" class="seccion-contacto" aria-labelledby="contacto-titulo">
+    <h2 id="contacto-titulo">Contacto</h2>
+    <p>Este formulario es solo de ejemplo: no envia informacion a ningun servidor.</p>
+    <form class="formulario-contacto" action="#" method="post">
+
+      <div class="campo-formulario">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" autocomplete="name" required>
+      </div>
+
+      <div class="campo-formulario">
+        <label for="email">Correo electronico</label>
+        <input type="email" id="email" name="email" autocomplete="email" required>
+      </div>
+
+      <div class="campo-formulario">
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+      </div>
+
+      <button type="submit" class="boton-enviar">Enviar mensaje</button>
+    </form>
+  </section>
+
+</main>
+
+<footer class="pie-pagina">
+  <p>Sitio personal de jardineria. Contenido con fines informativos y de aficionado.</p>
+</footer>
+
+</body>
+</html>
